@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu   xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/avTop5"
+        android:title="Top 5"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:icon="@drawable/top_5"    />
+
+</menu>
