@@ -2,4 +2,20 @@
     <string name="app_name">Petagram</string>
     <string name="pnombre">Mascota</string>
     <string name="prating">5</string>
+    <string name="menu_contacto">Contacto</string>
+    <string name="menu_acerca_de">Acerca de</string>
+    <string name="nombre">Nombre</string>
+    <string name="email">Email</string>
+    <string name="telefono">Telefono</string>
+    <string name="mensaje">Mensaje</string>
+    <string name="enviar">Enviar</string>
+    <string name="nombre_desarrollador">Gustavo Alvarado</string>
+    <string name="pais_desarrollador">Guatemala</string>
+    <string name="año_desarrollador">2016</string>
+    <string name="telefono_desarrollador">45615511</string>
+    <string name="email_desarrollador">gustavo.alvarado@gmail.com</string>
+    <string name="nombre_mascota">Snarf</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

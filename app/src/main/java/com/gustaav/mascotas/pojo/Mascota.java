@@ -1,4 +1,4 @@
-package com.gustaav.mascotas;
+package com.gustaav.mascotas.pojo;
 
 /**
  * Created by gustavo.alvarado on 09/10/2016.

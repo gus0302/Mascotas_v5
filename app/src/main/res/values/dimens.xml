@@ -5,10 +5,16 @@
     <dimen name="corner_radius_cardview">4dp</dimen>
     <dimen name="textsize_cardview">25dp</dimen>
     <dimen name="imagen_width">170dp</dimen>
+    <dimen name="imagen_width_2">55dp</dimen>
     <dimen name="imagen_heigth">230dp</dimen>
+    <dimen name="imagen_heigth_2">50dp</dimen>
     <dimen name="layout_width">185dp</dimen>
     <dimen name="layout_heigth">300dp</dimen>
+    <dimen name="layout_heigth_2">300dp</dimen>
     <dimen name="margen_cardview">10dp</dimen>
     <dimen name="top">20dp</dimen>
     <dimen name="left">10dp</dimen>
+    <dimen name="margenSuperior">10dp</dimen>
+    <dimen name="margenDerecho">10dp</dimen>
+    <dimen name="tamañoTextoBoton">20dp</dimen>
 </resources>

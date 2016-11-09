@@ -27,4 +27,31 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:24.2.1'
     compile 'com.android.support:design:24.2.1'
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
+    compile 'com.mikhaellopez:circularimageview:3.0.2'
 }
+
+android {
+    packagingOptions {
+        pickFirst 'META-INF/LICENSE.txt' // picks the JavaMail license file
+    }
+}
+
+repositories {
+    jcenter()
+    maven {
+        url "https://maven.java.net/content/groups/public/"
+    }
+}
+
+dependencies {
+    compile 'com.sun.mail:android-mail:1.5.5'
+    compile 'com.sun.mail:android-activation:1.5.5'
+}
+dependencies {
+    compile 'com.android.support:support-v4:24.+'
+}
+dependencies {
+    compile 'com.android.support:support-v4:24.+'
+}
+
+

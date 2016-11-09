@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.gustaav.mascotas.adapter.MascotaAdaptador;
+import com.gustaav.mascotas.pojo.Mascota;
+
 import java.util.ArrayList;
 
 public class Top5Mascotas extends AppCompatActivity {
