@@ -1,11 +1,14 @@
 package com.gustaav.mascotas;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.gustaav.mascotas.adapter.MascotaAdaptador;
+import com.gustaav.mascotas.db.BaseDatos;
+import com.gustaav.mascotas.db.ConstructorMascotas;
 import com.gustaav.mascotas.pojo.Mascota;
 
 import java.util.ArrayList;
@@ -13,6 +16,7 @@ import java.util.ArrayList;
 public class Top5Mascotas extends AppCompatActivity {
     ArrayList<Mascota> mascotas;
     private RecyclerView listaMascotas;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +41,7 @@ public class Top5Mascotas extends AppCompatActivity {
     }
 
     public void inicializarListaMascotas() {
-        mascotas = new ArrayList<Mascota>();
-
-        mascotas.add(new Mascota("Snoopy", 5, R.drawable.snoopy));
-        mascotas.add(new Mascota("Burro", 5, R.drawable.burro));
-        mascotas.add(new Mascota("Cringer", 5, R.drawable.cringer));
-        mascotas.add(new Mascota("Golfo", 5, R.drawable.golfo));
-        mascotas.add(new Mascota("Slinky", 5, R.drawable.slinky));
-
+        ConstructorMascotas constructorMascotas = new ConstructorMascotas(this);
+        mascotas = constructorMascotas.obtenerTop5Mascotas();
     }
 }
