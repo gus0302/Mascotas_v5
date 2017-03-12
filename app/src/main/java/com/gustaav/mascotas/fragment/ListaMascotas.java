@@ -1,7 +1,5 @@
 package com.gustaav.mascotas.fragment;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,40 +11,41 @@ import android.view.ViewGroup;
 import com.gustaav.mascotas.R;
 import com.gustaav.mascotas.adapter.MascotaAdaptador;
 import com.gustaav.mascotas.pojo.Mascota;
+import com.gustaav.mascotas.presenter.IMascotaPresenter;
+import com.gustaav.mascotas.presenter.MascotaPresenter;
 
 import java.util.ArrayList;
 
 
-public class ListaMascotas extends Fragment {
+public class ListaMascotas extends Fragment implements IListaMascotas {
 
     ArrayList<Mascota> mascotas;
     private RecyclerView listaMascotas;
+    private IMascotaPresenter presenter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_lista_mascotas, container, false);
-
-
         listaMascotas = (RecyclerView) v.findViewById(R.id.rvMascotas);
+        presenter = new MascotaPresenter(this, getContext());
 
-        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+        /*LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
+        listaMascotas.setLayoutManager(llm);*/
 
-        listaMascotas.setLayoutManager(llm);
-
-        inicializarListaMascotas();
-        inicializarAdaptador();
+        /*inicializarListaMascotas();
+        inicializarAdaptador();*/
         return v;
     }
 
-    public void inicializarAdaptador() {
+    /*public void inicializarAdaptador() {
         MascotaAdaptador adaptador = new MascotaAdaptador(mascotas, getActivity());
         listaMascotas.setAdapter(adaptador);
-    }
+    }*/
 
-    public void inicializarListaMascotas() {
+    /*public void inicializarListaMascotas() {
         mascotas = new ArrayList<Mascota>();
 
         mascotas.add(new Mascota("Tom", 5, R.drawable.tom));
@@ -59,5 +58,23 @@ public class ListaMascotas extends Fragment {
         mascotas.add(new Mascota("Scooby Doo", 3, R.drawable.scooby_doo));
         mascotas.add(new Mascota("Heathcliff", 3, R.drawable.heathcliff));
 
+    }*/
+
+    @Override
+    public void generarLinearLayoutVertical() {
+        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        listaMascotas.setLayoutManager(llm);
+    }
+
+    @Override
+    public MascotaAdaptador crearAdaptador(ArrayList<Mascota> mascotas) {
+        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas, getActivity());
+        return adaptador;
+    }
+
+    @Override
+    public void inicializarAdaptadorRV(MascotaAdaptador adaptador) {
+        listaMascotas.setAdapter(adaptador);
     }
 }
