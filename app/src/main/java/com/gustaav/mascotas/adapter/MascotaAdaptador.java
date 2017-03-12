@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gustaav.mascotas.R;
+import com.gustaav.mascotas.db.ConstructorMascotas;
 import com.gustaav.mascotas.pojo.Mascota;
 
 import java.util.ArrayList;
@@ -35,7 +36,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
     }
 
     @Override
-    public void onBindViewHolder(MascotaViewHolder mascotaViewHolder, int position) {
+    public void onBindViewHolder(final MascotaViewHolder mascotaViewHolder, int position) {
         final Mascota mascota = mascotas.get(position);
 
         mascotaViewHolder.imgFoto.setImageResource(mascota.getFoto());
@@ -45,9 +46,15 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         mascotaViewHolder.ibRate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(activity, "Vas a ratear a " + mascota.getNombre(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, "Rateaste a " + mascota.getNombre(), Toast.LENGTH_SHORT).show();
+                ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
+                constructorMascotas.ratearMascota(mascota);
+
+                mascotaViewHolder.tvRating.setText(String.valueOf(constructorMascotas.obtenerRatingMascota(mascota)));
             }
         });
+
+
     }
 
     @Override
